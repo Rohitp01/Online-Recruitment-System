@@ -57,16 +57,16 @@ li a:hover {
 <body>
 	<div id="header">
 		<h1>Online Recruitment System</h1>
-		<p>Welcome Admin</p>
+		<p>Welcome User</p>
 	</div>
 
 	<div id="nav">
-	<ul>
-  		<li><a href="userdetails.php">View Users</a></li>
-  		<li><a href="jobopenings.php">Add Job Openings</a></li>
-  		<li><a href="#contact">Update status</a></li>
-  		<!-- <li><a href="#about">About</a></li> -->
-	</ul>
+  		<ul>
+			<li><a href="userviewjobs.php">See Job Openings</a></li>
+			<li><a href="#news">Check Status</a></li>
+			<li><a href="#contact">Update Profile</a></li>
+			<!-- <li><a href="#about">About</a></li> -->
+		</ul>
 	</div>
 
 	<div id="logoutbutton">
@@ -74,14 +74,15 @@ li a:hover {
     </div>
 
     <div id="section">
-		<!-- <center><h1>All user Information</h1></center>
+		<center><h1>All Job Openings</h1></center>
 	<table width = '800' align = 'center' border = '5'>
 		<tr bgcolor='yellow'>
-			<th>User ID</th>
-			<th>User Name</th>
-			<th>User Password</th>
-			<th>User Email</th>
-			<th>Delete User</th>
+			<th>Company name</th>
+			<th>Job Profile</th>
+			<th>Location</th>
+			<th>Vacancies</th>
+			<th>Job Description</th>
+			<th>Apply</th>
 		</tr>
 
 		<tr>
@@ -90,24 +91,26 @@ li a:hover {
 			mysql_connect("localhost","root","");
 			mysql_select_db("online_recruitment_system");
 
-			$query = "select * from user";
+			$query = "select * from job_offer";
 			$run = mysql_query($query);
 			while($row = mysql_fetch_array($run)){
 
-				$user_id =$row[0];
-				$user_name = $row[1];
-				$user_password = $row[2];
-				$user_email = $row[3];
+				$comapany_name =$row[1];
+				$job_profile = $row[2];
+				$location = $row[3];
+				$vacancies = $row[4];
+				$description = $row[5];
 			
 		?>
-			<td><?php echo $user_id; ?></td>
-			<td><?php echo $user_name; ?></td>
-			<td><?php echo $user_password; ?></td>
-			<td><?php echo $user_email; ?></td>
-			<td><a href = 'deleteuser.php?del=<?php echo $user_id; ?>'>Delete</a></td>
+			<td><?php echo $comapany_name; ?></td>
+			<td><?php echo $job_profile; ?></td>
+			<td><?php echo $location; ?></td>
+			<td><?php echo $vacancies; ?></td>
+			<td><?php echo $description; ?></td>
+			<td><a href = 'jobapplication.php?del=<?php echo $user_id; ?>'>Apply</a></td>
 		</tr>
 	<?php } ?>
-	</table> -->
+	</table>
 	</div>
 	 
 	<div id="footer">

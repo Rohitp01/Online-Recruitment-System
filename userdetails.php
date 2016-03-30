@@ -62,7 +62,7 @@ li a:hover {
 
 	<div id="nav">
 	<ul>
-  		<li><a href="userdetails.php">View Users</a></li>
+  		<li><a href="#home">View Users</a></li>
   		<li><a href="jobopenings.php">Add Job Openings</a></li>
   		<li><a href="#contact">Update status</a></li>
   		<!-- <li><a href="#about">About</a></li> -->
@@ -74,7 +74,7 @@ li a:hover {
     </div>
 
     <div id="section">
-		<!-- <center><h1>All user Information</h1></center>
+		<center><h1>All user Information</h1></center>
 	<table width = '800' align = 'center' border = '5'>
 		<tr bgcolor='yellow'>
 			<th>User ID</th>
@@ -107,7 +107,7 @@ li a:hover {
 			<td><a href = 'deleteuser.php?del=<?php echo $user_id; ?>'>Delete</a></td>
 		</tr>
 	<?php } ?>
-	</table> -->
+	</table>
 	</div>
 	 
 	<div id="footer">

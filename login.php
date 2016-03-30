@@ -1,5 +1,5 @@
 <?php
-	//session_start();
+	session_start();
 ?>
 <html>
 <head>
@@ -61,14 +61,10 @@
 		$run = mysql_query($check_user);
 
 		if(mysql_num_rows($run)>0){
-			//$_SESSION['email'] = $email;
+			$_SESSION['email'] = $user_email;
 			echo "<script>window.open('welcome.php','_self')</script>";
 		}
 		else echo "<script>alert('Email or password is Wrong')</script>";
 		
 	}
-
-	
-	
-
 ?>
