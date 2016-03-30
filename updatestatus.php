@@ -74,14 +74,16 @@ li a:hover {
     </div>
 
     <div id="section">
-		<!-- <center><h1>All user Information</h1></center>
+		<center><h1>Job Applications</h1></center>
 	<table width = '800' align = 'center' border = '5'>
 		<tr bgcolor='yellow'>
-			<th>User ID</th>
-			<th>User Name</th>
-			<th>User Password</th>
-			<th>User Email</th>
-			<th>Delete User</th>
+			<th>Application id</th>
+			<th>Job id</th>
+			<th>Name</th>
+			<th>Age</th>
+			<th>Qualification</th>
+			<th>Reject</th>
+			<th>Accept</th>
 		</tr>
 
 		<tr>
@@ -90,24 +92,26 @@ li a:hover {
 			mysql_connect("localhost","root","");
 			mysql_select_db("online_recruitment_system");
 
-			$query = "select * from user";
+			$query = "select * from applications";
 			$run = mysql_query($query);
 			while($row = mysql_fetch_array($run)){
 
-				$user_id =$row[0];
-				$user_name = $row[1];
-				$user_password = $row[2];
-				$user_email = $row[3];
-			
+				$application_id =$row[0];
+				$job_id = $row[1];
+				$user_name = $row[2];
+				$user_age = $row[3];
+				$user_qualification = $row[4];
 		?>
-			<td><?php echo $user_id; ?></td>
+			<td><?php echo $application_id; ?></td>
+			<td><?php echo $job_id; ?></td>
 			<td><?php echo $user_name; ?></td>
-			<td><?php echo $user_password; ?></td>
-			<td><?php echo $user_email; ?></td>
-			<td><a href = 'deleteuser.php?del=<?php echo $user_id; ?>'>Delete</a></td>
+			<td><?php echo $user_age; ?></td>
+			<td><?php echo $user_qualification; ?></td>
+			<td><a href = 'rejectuser.php?del=<?php echo $application_id; ?>'>Reject</a></td>
+			<td><a href = 'acceptuser.php?acc=<?php echo $application_id; ?>'>Accept</a></td>
 		</tr>
 	<?php } ?>
-	</table> -->
+	</table>
 	</div>
 	 
 	<div id="footer">

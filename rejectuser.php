@@ -5,9 +5,9 @@
 	
 	$delete_id = $_GET['del'];
 	
-	$query = "delete from user where user_id ='$delete_id'";
+	$query = "delete from applications where application_id ='$delete_id'";
 	if(mysql_query($query)){
-		echo "<script>window.open('userdetails.php','_self')</script>";
+		echo "<script>window.open('updatestatus.php','_self')</script>";
 	}
 	else {
 		echo "<script>alert('error');</script>";

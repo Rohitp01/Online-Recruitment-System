@@ -95,11 +95,17 @@ li a:hover {
 			$run = mysql_query($query);
 			while($row = mysql_fetch_array($run)){
 
+				$job_id = $row[0];
 				$comapany_name =$row[1];
 				$job_profile = $row[2];
 				$location = $row[3];
 				$vacancies = $row[4];
 				$description = $row[5];
+				/*session_start();
+				$_SESSION['job_id'] = $job_id;
+				$_SESSION['company_name'] = $comapany_name;
+				$_SESSION['job_profile'] = $job_profile;
+				$_SESSION['location'] = $location;*/
 			
 		?>
 			<td><?php echo $comapany_name; ?></td>
@@ -107,7 +113,7 @@ li a:hover {
 			<td><?php echo $location; ?></td>
 			<td><?php echo $vacancies; ?></td>
 			<td><?php echo $description; ?></td>
-			<td><a href = 'jobapplication.php?del=<?php echo $user_id; ?>'>Apply</a></td>
+			<td><a href = 'jobapplicationform.php?jobid=<?php echo $job_id; ?>''>Apply</a></td>
 		</tr>
 	<?php } ?>
 	</table>
